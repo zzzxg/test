@@ -16,7 +16,7 @@ void test1(){
 
 void test2(){
     string s = "asdfagfdgggfgqwwwerreycxcvujummhgfhfdgh";
-    int len = 3;
+    int len = 5;
     int ret =  lengthOfLongestSubstring(s);
     printf("ret = %d ", ret);
     if (len == ret)
@@ -27,6 +27,7 @@ void test2(){
 int main(){
 
     test1();
+    test2();
     return 0;
 }
 
@@ -34,7 +35,6 @@ int main(){
         //map 为红黑树（平衡排序二叉树），插入删除操作复杂度为O（logn）
         //由于字母数为有限个，故字母表map中的插入删除操作复杂度为O(1)
         //故此算法复杂度度为O(n)
-
 
         int ret = 0;
         map<char, int> m;
@@ -46,14 +46,12 @@ int main(){
             {
                 start = m[c] + 1;
                 m[c] = i;
-
             }
             else
             {
                 m[c] = i;
                 ret = max(ret, i - start + 1);
             }
-
         }
         return ret;
     }
